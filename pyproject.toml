@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "abstime"
+version = "0.1.0"
+description = "AbsTime resolves natural language time expressions for AI systems. Built for agents, assistants, and workflows that need accurate time resolution."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "AbsTime Team" }]
+license = { text = "MIT" }
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only"
+]
+dependencies = [
+  "httpx>=0.28,<1",
+]
+
+[project.urls]
+Homepage = "https://abstime.ai"
+Repository = "https://github.com/abstime-ai/abstime-python"
+Documentation = "https://docs.abstime.ai"
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "README.md",
+  "LICENSE",
+  "src/abstime/**"
+]
+exclude = [
+  ".gitignore"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/abstime"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = [
+  "E",
+  "F",
+  "I",
+]
+
