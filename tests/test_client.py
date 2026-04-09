@@ -4,8 +4,8 @@ from unittest.mock import patch
 
 from abstime import (
     AbsTime,
-    AsyncAbsTime,
     APIConnectionError,
+    AsyncAbsTime,
     AuthenticationError,
     InputError,
     RateLimitError,
